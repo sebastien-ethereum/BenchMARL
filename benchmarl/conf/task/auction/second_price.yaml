@@ -1,0 +1,8 @@
+defaults:
+  - auction_second_price_config
+  - _self_
+
+n_bidders: 3
+max_steps: 100
+min_value: 0
+max_value: 100

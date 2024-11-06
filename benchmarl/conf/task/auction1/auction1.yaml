@@ -1,0 +1,7 @@
+
+price_index: 0
+num_agents: 2
+npcs:
+  A: 0.5
+  B: 0.7
+  C: 0.9

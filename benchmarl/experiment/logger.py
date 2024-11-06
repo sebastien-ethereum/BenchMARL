@@ -213,8 +213,11 @@ class Logger:
                     )
 
         self.log(to_log, step=step)
-        if video_frames is not None and max_length_rollout_0 > 1:
-            video_frames = np.stack(video_frames[: max_length_rollout_0 - 1], axis=0)
+        if video_frames is not None and max_length_rollout_0 > 0:
+            if max_length_rollout_0 == 1:
+                video_frames = np.stack(video_frames[: max_length_rollout_0], axis=0)
+            elif max_length_rollout_0 > 1:
+                video_frames = np.stack(video_frames[: max_length_rollout_0 - 1], axis=0)
             vid = torch.tensor(
                 np.transpose(video_frames, (0, 3, 1, 2)),
                 dtype=torch.uint8,
